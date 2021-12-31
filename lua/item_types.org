@@ -1,0 +1,79 @@
+* Stats
+
+** Lore
+
++ Description :: Description Done!
++ Name :: Name Done!
+  
+** Level
+
++ LevelEquip :: The level needed to equip Done!
++ LevelItem :: The ilvl Done!
+
+** Primary stats
+   
++ Block :: Block Strength (primary stat for shields)
++ BlockRate :: Block Rate (primary stat for shields)
++ DamageMag :: Magic damage
++ DamagePhys :: Physical damage
++ DefenseMag :: Magic defense
++ DefensePhys :: Physical defense
++ DelayMs :: Time between autoattacks (in seconds / 1000)
++ CooldownS :: Cooldown (in seconds)
+
+** Secondary stats
+
++ Stats.[StatName].NQ :: The stat's NQ value
++ Stats.[StatName].HQ :: The stat's HQ value
+  
+** Class data
+
+Each of the guys here is a dict indexed by class IDs, with value 1 iff the class ID applies. Need to call each of the keys in the dict separately from XIVAPI.
+   
++ ClassJobCategory :: Class IDs of the class that can equip it Done!
++ ClassJobRepair.ClassJobCategory :: Class IDs of the class that can repair it. Map to ClassJobRepair. Done!
+
+** Appearance in inventory
+
++ ItemKind.Name :: The category the item is in (e.g. Medicine & Meals) Done!
++ ItemUICategory.Name :: The subcategory. This seems to be always nonempty Done!
++ ItemSeries.Name :: The series (e.g. Order of the Twin Adder Uniform) the item belongs to. Map it to ItemSeries. Done!
++ StackSize :: How many in a single inventory slot. Done!
+  
+** Materia (for equipment)
+
++ IsAdvancedMeldingPermitted :: 1 iff admits overmeld. Done!
++ MateriaSlotCount :: How many materia you can put in it. Done!
+
+** Materia (for materia)
+
++ Materia.BaseParam.Name :: stat modded by materia. Map to Materia.BaseParam. Done!
++ Materia.Value :: amount modded by (can be 0, for removed materia). Done!
+
+** Glamour
+
++ IsDyeable :: 1 iff dyeable Done
++ ItemGlamour.Name :: The type of glamour prism needed to project it. Map to ItemGlamour. Done!
+
+** Numerical categories
+  
++ AetherialReduce :: Aetheric reduction; 0 iff can't be aetherically reduced Done
++ Desynth :: 0 iff can't be desynthed Done
++ EquipRestriction :: 0 iff no race/gender restrictions Done
++ ItemAction :: 0 iff nonusable Done
+  
+** Other properties
+
++ CanBeHq :: 1 iff admits HQ Done
++ GrandCompany.Name :: Name of the Grand Company gear set. Map to GrandCompany. Done!
++ ID :: Item ID Done
++ IconID :: Icon ID (not sure how we want to integrate this with Module:Icon) Done
++ IsCollectable :: 1 iff collectable Done
++ IsUnique :: 1 iff unique Done
++ IsUntradable :: 1 iff untradable Done
++ ItemRepair.Name :: The kind of dark matter needed to repair it. Map to ItemRepair. Done!
++ IsCrestWorthy :: 1 iff admits FC crest Done
++ IsIndisposable :: 1 iff can't be thrown away Done
++ AlwaysCollectable :: Can only be crafted as a collectable Done
+
+* Stuff I have to add

@@ -1,0 +1,20 @@
+AmountIngredientN (turn this into a dict Ingredients)
+AmountResult DONE
+CanHq DONE
+CanQuickSynth DONE
+IsExpert DONE
+IsSecondary DONE
+IsSpecializationRequired DONE
+ItemIngredientN[.Name] (turn this into a dict Ingredients)
+ID DONE
+ClassJob[.Name] DONE
+ClassJobLevel DONE
+[RecipeLevelTable.]Difficulty DONE
+[RecipeLevelTable.]Durability DONE
+[RecipeLevelTable.]Quality DONE
+[RecipeLevelTable.]Stars
+[RecipeLevelTable.]SuggestedControl DONE
+[RecipeLevelTable.]SuggestedCraftsmanship DONE
+RequiredControl DONE
+RequiredCraftsmanship DONE
+SecretRecipeBook[.Name] DONE

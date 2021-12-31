@@ -1,0 +1,38 @@
+
+# generate_items.py
+# Written by Catuse167 of FFWiki.
+
+import asyncio
+import logging
+import aiohttp
+import pyxivapi
+from pyxivapi.models import Filter, Sort
+import pywikibot
+
+def save(data, title):
+    f = open(title, "w")
+    f.write(data)
+    f.close()
+
+async def fetch():
+    client = pyxivapi.XIVAPIClient(api_key="ca3707fd6b7b46b19ae769b657ff6a7ce26da45a40a244f08015f3a2ee7211d2")
+    site = pywikibot.Site()
+
+    keys = ["AdditionalData", "AetherialReduce", "AlwaysCollectable", "BaseParam0", "BaseParam0Target", "Block", "BlockRate",]
+    
+    examples = {}
+    for i in range(100, 200):
+        item = await client.index_by_id(index="Item", content_id=i, columns=["Name", key])
+        if key in item and item[key] != None and item[key] != 0 and item[key] != "":
+            examples[item] = item[key]
+    print(examples)
+    save(examples, "xivapi/logs/examples_" + key + ".log")
+
+
+
+
+
+
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO, format='%(message)s', datefmt='%H:%M')
+    asyncio.get_event_loop().run_until_complete(fetch())
